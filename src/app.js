@@ -11,7 +11,7 @@ console.log ('El servidor en el puerto 3000')
 
 app.get ('/', async (req, res) => {
     // res.send ("Implantación aplicaciones web")
-    const [result] = await pool.query (`SELECT * from  userdb.user`)
+    const [result] = await pool.query (`SELECT * from  user`)
     res.json (result)
 })
 app.get ('/ping', async (req, res) => {
@@ -21,7 +21,7 @@ app.get ('/ping', async (req, res) => {
 })
 
 app.get ('/create', async(req, res) => {
-    const [insert] = await pool.query (`INSERT INTO userdb.user(name) VALUES ('Maria')`);
+    const [insert] = await pool.query (`INSERT INTO user(name) VALUES ('Maria')`);
     console.log (insert)
 });
 
